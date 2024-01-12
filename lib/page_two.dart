@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 
-class PageTwo extends StatefulWidget{
+class PageTwo extends StatefulWidget {
   final Function(int) callback;
   int counter;
 
   PageTwo({required this.counter, required this.callback});
 
   @override
-  _PageTwoState createState()=> _PageTwoState();
-
+  _PageTwoState createState() => _PageTwoState();
 }
 
-class _PageTwoState extends State<PageTwo>{
-  
-  void _incrementCounter(){
+class _PageTwoState extends State<PageTwo> {
+  void _incrementCounter() {
     setState(() {
       widget.counter++;
     });
@@ -27,7 +25,7 @@ class _PageTwoState extends State<PageTwo>{
         title: Text('Página 2'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: (){
+          onPressed: () {
             Navigator.of(context).pop(widget.counter);
           },
         ),
@@ -36,9 +34,7 @@ class _PageTwoState extends State<PageTwo>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Presiona el botón varias veces'
-            ),
+            Text('Presiona el botón varias veces'),
             Text(
               '${widget.counter}',
               style: Theme.of(context).textTheme.headlineLarge,
@@ -53,5 +49,4 @@ class _PageTwoState extends State<PageTwo>{
       ),
     );
   }
-
 }
